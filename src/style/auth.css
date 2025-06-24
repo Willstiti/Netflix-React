@@ -1,0 +1,7 @@
+.bg-auth {
+    background-image: url('https://www.numerama.com/content/uploads/2017/05/netflix.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
