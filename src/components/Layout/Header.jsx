@@ -1,18 +1,28 @@
-const Header = () =>{
-    return(
-        <header className="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50">
-            <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-                <h1 className="text-2xl font-bold">Mon Site</h1>
-                <nav>
-                <ul className="flex space-x-6">
-                    <li><a href="#" className="hover:text-gray-400">Accueil</a></li>
-                    <li><a href="#" className="hover:text-gray-400">À propos</a></li>
-                    <li><a href="#" className="hover:text-gray-400">Contact</a></li>
-                </ul>
-                </nav>
-            </div>
-        </header>
-    )
-}
+import "../../style/header.css";
+const Header = () => {
+  return (
+    <header className="header bg-gray-900">
+      <div className="header-container">
+        <h1 className="logo">
+          <a href="/" className="text-white hover:underline">TrollFix</a>
+        </h1>
+        <nav>
+          <ul className="nav-links">
+            <li>
+              <a href="/categories">
+                <button className="home-button">Accueil Catégories</button>
+              </a>
+            </li>
+            <li>
+              <a href="/movies">
+                <button className="home-button">Accueil Films</button>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
 
 export default Header
