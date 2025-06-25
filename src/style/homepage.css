@@ -1,0 +1,46 @@
+.home-container {
+  height: 100vh;
+  background-color: #1a1a1a; /* gris foncé */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.home-button.blue {
+  background-color: #007bff;
+}
+
+.home-button.blue:hover {
+  background-color: #0056b3;
+}
+
+.home-button.green {
+  background-color: #28a745;
+}
+
+.home-button.green:hover {
+  background-color: #1e7e34;
+}
