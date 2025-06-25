@@ -2,6 +2,7 @@
 
 import MovieLittleSection from "./MovieLittleSection"
 import NetflixSectionAddForm from "./NetflixSectionAddForm";
+import Header from "./Layout/Header"
 import { useState, useEffect } from "react";
 
 const MovieSection = () => {
@@ -23,13 +24,12 @@ const MovieSection = () => {
     }, []);
 
     return (
-        <div>
-            <header>
+        <div className="content">
+            <Header/>
+            <main className="categories-content">
                 <NetflixSectionAddForm annuaireHooks={annuaireHooks} setAnnuaireHooks={setAnnuaireHooks}/>
-            </header>
-            <div>
                 <MovieLittleSection title="Tendance" data = {annuaireHooks}/>
-            </div>
+            </main>
         </div>
     );
 }
