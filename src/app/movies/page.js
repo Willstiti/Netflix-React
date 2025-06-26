@@ -1,5 +1,5 @@
-import MovieSection from "@/components/MovieSection";
+import SectionPage from "@/pages/SectionPage";
 
 export default function MoviesPage() {
-  return <MovieSection />;
+  return <SectionPage type="movie" />;
 }

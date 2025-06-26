@@ -1,4 +1,4 @@
-import Movie from "./Movie";
+import MediaSection from "./MediaCard";
 
 const MovieLittleSection = ({ title, data }) => {
     return (
