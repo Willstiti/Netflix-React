@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const CategorieList = () => {
   const [categories, setCategories] = useState([]);
@@ -83,7 +84,9 @@ const CategorieList = () => {
               className="bg-gray-700 text-white p-2 rounded flex-1 mr-4"
             />
           ) : (
-            <span className="flex-1">{cat.nom}</span>
+            <Link href={`/categories/${cat.id}`} className="flex-1 hover:underline text-white">
+              {cat.nom}
+            </Link>
           )}
 
           {editId === cat.id ? (
