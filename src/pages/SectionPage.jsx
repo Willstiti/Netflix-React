@@ -11,7 +11,7 @@ const SectionPage = ({ type }) => {
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        const response = await fetch(`/api/${type}s`);
+        const response = await fetch(`/api/${type}`);
         if (!response.ok) throw new Error("Erreur lors du chargement des données");
         const data = await response.json();
         setMediaList(data);
@@ -28,7 +28,7 @@ const SectionPage = ({ type }) => {
       <Header />
       <main className="categories-content">
         <NetflixSectionAddForm annuaireHooks={mediaList} setAnnuaireHooks={setMediaList} type={type} />
-        <MediaSection title={type === "movie" ? "Films tendance" : "Séries tendance"} data={mediaList} />
+        <MediaSection title={type === "movies" ? "Films tendance" : "Séries tendance"} data={mediaList} />
       </main>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const NetflixSectionAddForm = ({ annuaireHooks, setAnnuaireHooks }) => {
+const NetflixSectionAddForm = ({ annuaireHooks, setAnnuaireHooks, type }) => {
     const [categories, setCategories] = useState([]);
     const [temp, setTemp] = useState({ titre: "", url: "", categorie_id: "" });
 
@@ -28,9 +28,9 @@ const NetflixSectionAddForm = ({ annuaireHooks, setAnnuaireHooks }) => {
         const { titre, url, categorie_id } = temp;
 
         if (titre && url && categorie_id) {
-            setAnnuaireHooks([...annuaireHooks, temp]);
+
             try {
-                const response = await fetch("/api/movies", {
+                const response = await fetch(`/api/${type}`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(temp),
@@ -39,7 +39,8 @@ const NetflixSectionAddForm = ({ annuaireHooks, setAnnuaireHooks }) => {
                 if (!response.ok) throw new Error("Échec de l'ajout");
 
                 const result = await response.json();
-                console.log("Ajout en DB réussi :", result);
+                console.log(`Ajout en DB réussi (${type}) :`, result);
+                setAnnuaireHooks([annuaireHooks, temp]);
             } catch (error) {
                 console.error("Erreur API :", error);
                 alert("Erreur lors de l'ajout en base. Donnée ajoutée seulement localement.");
@@ -48,15 +49,17 @@ const NetflixSectionAddForm = ({ annuaireHooks, setAnnuaireHooks }) => {
             alert("Tous les champs doivent être remplis !");
         }
     };
+    
+    const typeLabel = type === "series" ? "Série" : "Film";
 
     return (
         <div className="p-6 bg-gray-900 border border-white rounded-lg">
             <h1 className="text-center text-white text-xl font-bold mb-4 underline">
-                Ajouter un Film / Album
+                Ajouter un Film / Série
             </h1>
             <form onSubmit={onSubmitForm} className="space-y-4">
                 <div className="flex flex-col">
-                    <label className="text-white mb-1">Titre du Film</label>
+                    <label className="text-white mb-1">Titre</label>
                     <input 
                         type="text" 
                         name="titre" 

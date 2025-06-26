@@ -18,6 +18,11 @@ const Header = () => {
                 <button className="home-button">Accueil Films</button>
               </a>
             </li>
+            <li>
+              <a href="/series">
+                <button className="home-button">Accueil Series</button>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
