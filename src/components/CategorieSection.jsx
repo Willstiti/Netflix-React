@@ -92,14 +92,14 @@ const CategorieList = () => {
           {editId === cat.id ? (
             <button
               onClick={() => handleUpdate(cat.id)}
-              className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded mr-2"
+              className="home-button text-white px-3 py-1 rounded mr-2"
             >
               Sauvegarder
             </button>
           ) : (
             <button
               onClick={() => startEdit(cat.id, cat.nom)}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mr-2"
+              className="home-button text-white px-3 py-1 rounded mr-2"
             >
               Éditer
             </button>
@@ -107,7 +107,7 @@ const CategorieList = () => {
 
           <button
             onClick={() => handleDelete(cat.id)}
-            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded"
+            className="home-button text-white px-3 py-1 rounded"
           >
             Supprimer
           </button>

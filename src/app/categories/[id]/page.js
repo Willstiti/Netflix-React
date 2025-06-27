@@ -15,5 +15,10 @@ export default async function SpecificCategoriePage({ params }) {
         "SELECT * FROM movies WHERE idCategory = ?",
         [id]
     );
-    return <SpecificCategorie categorie={categorie} films={films} />;
+
+    const [series] = await connexion.execute(
+        "SELECT * FROM series WHERE idCategory = ?",
+        [id]
+    );
+    return <SpecificCategorie categorie={categorie} films={films} series={series} />;
 }
